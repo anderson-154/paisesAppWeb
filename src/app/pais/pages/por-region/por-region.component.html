@@ -15,15 +15,14 @@
 
         <!-- Tercera forma de hacerlo         -->
         <!-- [class]="(region === regionActiva)? 'btn btn-primary': 'btn btn-outline-primary'" -->
+
+        
         <button *ngFor="let region of regiones"
                 [class]="getClaseCss(region)"               
                 (click)="activarRegion(region)">
             {{region | titlecase}}
         </button>
     </div>
-</div>
-<div *ngIf="hayError" class="alert alert-danger">
-    No se ha encontrado respuesta con el termino {{termino}}
 </div>
 
 <div *ngIf="paises.length>0" class="row">
