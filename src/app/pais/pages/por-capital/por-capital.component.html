@@ -1,20 +1,22 @@
-<h2>Por Capital</h2>
-<hr>
+<div class="animate__animated animate__backInDown animate__delay-0.3s">
+    <h2>Por Capital</h2>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <app-pais-input (onEnter)="buscar( $event)"
+                            (onDebounce)="sugerencias($event)"
+                            placeholder="Por Capital....">
+        </app-pais-input></div>
+    </div>
 
-<div class="row">
-    <div class="col">
-        <app-pais-input (onEnter)="buscar( $event)"
-                        (onDebounce)="sugerencias($event)"
-                        placeholder="Por Capital....">
-    </app-pais-input></div>
+    <hr>
 </div>
 
-<hr>
 <div *ngIf="hayError" class="alert alert-danger">
     No se ha encontrado respuesta con el termino {{termino}}
 </div>
 
-<div *ngIf="paises.length>0" class="row">
+<div *ngIf="paises.length>0" class="row animate__animated animate__backInRight animate__delay-0.3s">
     <div class="col">
         <app-pais-table [paises]="paises"></app-pais-table>
     </div>

@@ -1,8 +1,9 @@
-<h2>Por region <small>{{regionActiva | titlecase}}</small></h2>
-<hr>
+<div class="animate__animated animate__backInDown animate__delay-0.3s">
+    <h2>Por region <small>{{regionActiva | titlecase}}</small></h2>
+    <hr>
 
-<div class="row">
-    <div class="col">
+    <div class="row">
+        <div class="col">
 
         <!-- //forma de hacerlo -->
         <!-- [class.btn-primary]="region === regionActiva" -->
@@ -17,15 +18,17 @@
         <!-- [class]="(region === regionActiva)? 'btn btn-primary': 'btn btn-outline-primary'" -->
 
         
-        <button *ngFor="let region of regiones"
-                [class]="getClaseCss(region)"               
-                (click)="activarRegion(region)">
-            {{region | titlecase}}
-        </button>
+            <button *ngFor="let region of regiones"
+                     [class]="getClaseCss(region)"               
+                     (click)="activarRegion(region)">
+             {{region | titlecase}}
+         </button>
+     </div>
     </div>
 </div>
 
-<div *ngIf="paises.length>0" class="row">
+
+<div *ngIf="paises.length>0" class="row animate__animated animate__backInRight animate__delay-0.3s">
     <div class="col">
         <app-pais-table [paises]="paises"></app-pais-table>
     </div>
