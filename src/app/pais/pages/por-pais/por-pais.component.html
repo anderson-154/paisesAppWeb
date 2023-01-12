@@ -8,11 +8,17 @@
                             placeholder="Por Pais...."></app-pais-input>
         </div>
     </div>
-    <ul class="list-group">
+    <ul *ngIf="mostrarSugerencias"
+        class="list-group">
         <li *ngFor="let paises of paisesSugeridos"
             class="list-group-item list-group-item-action">
             <a class="nav-link"
                 [routerLink]="['/pais', paises.cca2]"> {{paises.name.common}}</a>
+        </li>
+        <li class="list-group-item list-group-item-action">
+            <a class="nav-link"
+            (click)="buscarSugerido(termino)"
+                >Buscar {{termino}}</a>
         </li>
     </ul>
 </div>
